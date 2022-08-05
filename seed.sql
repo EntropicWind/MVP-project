@@ -1,5 +1,5 @@
-
-
+DELETE FROM client;
+DELETE FROM goals;
 
 INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Edward', 'Sabbatino', 70,'devvingiscool@gmail.com', '719-456-7890');
 INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Lisa', 'Caldwell', 70,'mookiesmom@gmail.com', '226-123-0129');
