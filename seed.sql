@@ -1,8 +1,8 @@
 DELETE FROM client;
 DELETE FROM goals;
 
-INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Edward', 'Sabbatino', 70,'devvingiscool@gmail.com', '719-456-7890');
-INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Lisa', 'Caldwell', 70,'mookiesmom@gmail.com', '226-123-0129');
+INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Edward', 'Sabbatino', 70, '719-456-7890', 'devvingiscool@gmail.com');
+INSERT INTO client (first_name, Last_name, age, phone_number, email) VALUES ('Lisa', 'Caldwell', 70, '226-123-0129', 'mookiesmom@gmail.com');
 
 
 INSERT INTO goals (client_id, goal_name, complete_by, priority, complete) VALUES (1, 'Brush Teeth', 'Morning', 'High', 'no');

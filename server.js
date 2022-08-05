@@ -128,12 +128,12 @@ app.post('/api/client', (req,res) => {
         const { goal_name, complete_by, priority, complete} = req.body;
         console.log(req.body, req.path)
         const { client_goals } = req.params;
-        console.log(client_goals);
+        console.log(client_goals, "this is the client name");
         // const { goal_name, complete_by, priority, complete } = req.body;
         if(!client_goals || !goal_name || !complete_by || !priority || !complete) {
             res.sendStatus(400)
         }else{
-            const client_id = await pool.query('SELECT id FROM client where first_name = ($1);', [client_goals]);
+            const client_id = await pool.query('SELECT id FROM client WHERE first_name = ($1);', [client_goals]);
             console.log(client_id.rows[0].id, "logging out client id")
         pool.query(`INSERT INTO goals (client_id, goal_name, complete_by, priority, complete)
        VALUES ($1, $2, $3, $4, $5) RETURNING *;`, [client_id.rows[0].id, goal_name, complete_by, priority, complete]).then((data) => {
