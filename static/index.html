@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Goal Tracker</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="cover.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+  <body>
+    <h1>Personal Daily Goal Tracker</h1>
+    <header>
+        <main>
+            <div class="container py-4">
+              <header class="pb-3 mb-4 border-bottom">
+           
+              </header>
+          
+              <div class="p-5 mb-4 bg-light rounded-3">
+                <div class="container-fluid py-2">
+                  <h2 class="display-5 fw-bold">Track Your New Goals Here!</h2>
+                  <p class="col-md-8 fs-5">Click the Button Below to get Tracking!</p>
+                  <button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    New User Click Here
+                  </button>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body w-100" id="information">
+                      <form class="data-input">
+                        <div class="input-group">
+                            <span class="input-group-text">First and Last name</span>
+                            <input type="text" aria-label="first-name" class="form-control">
+                            <input type="text" aria-label="last-name" class="form-control">
+                          </div>
+                          <div class="input-group input-group-sm mb-3 w-25">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Age</span>
+                            <input type="text" class="form-control" aria-label="age" aria-describedby="inputGroup-sizing-sm">
+                          </div>
+                          <div class="input-group input-group-sm mb-3 w-100">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Phone Number</span>
+                            <input type="phone" class="form-control" aria-label="phone-number" aria-describedby="inputGroup-sizing-sm">
+                          </div>
+                          <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm w-25">Email</span>
+                            <input type="email" class="form-control" aria-label="email" aria-describedby="inputGroup-sizing-sm">
+                          </div>
+                          <div class="col-auto">
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="autoSizingCheck">
+                              <label class="form-check-label" for="autoSizingCheck">
+                                Remember me
+                              </label>
+                            </div>
+                          </div>
+                    </div>
+                    <button class="btn btn-outline-secondary me-md-2" type="reset" value="reset" id="clear-info-bttn">Clear</button>
+                  </form>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-secondary me-md-2" id="add-me" type="submit" data-bs-toggle="modal" data-bs-target="#confimationModal">Submit</button>
+                      </div>
+                   
+                      <!-- Modal -->
+<div class="modal fade" id="confimationModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Enrollment Confirmation</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        You have successfully submitted your information!
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="confirmationClose">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+                  </div>
+                  <br>
+                  <br>
+                  <button class="btn btn-lg btn-dark" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample">
+                    New goals Click Here
+                  </button>
+                  <div class="collapse" id="collapseExample5">
+                    <div class="card card-body w-50">
+                      <div class="input-group mb-3">
+                        <input type="text" name="searchForMe" class="form-control" placeholder="Enter your Name" aria-label="Person-specific-goal" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="search-bttn">Search</button>
+                      </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Write your Goal Below:</label>
+                            <textarea class="form-control" id="goal-name-text" rows="3"></textarea>
+                          </div>
+                        <select class="form-select form-select-sm" id="complete-by" aria-label=".form-select-sm example">
+                            <option selected>Complete goal by:</option>
+                            <option value="Morning">Morning</option>
+                            <option value="Noon">Noon</option>
+                            <option value="Evening">Evening</option>
+                          </select>
+                          <select class="form-select form-select-sm" id="priority" aria-label=".form-select-sm example">
+                            <option selected>Priority level:</option>
+                            <option value="Low">Low Priority</option>
+                            <option value="Med">Medium Priority</option>
+                            <option value="High">High Priority</option>
+                          </select>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDisabled" disabled>
+                            <label class="form-check-label" for="flexCheckDisabled">
+                              Goal Complete
+                            </label>
+                          </div>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-outline-secondary me-md-2" type="button" id="submit-goal" data-bs-toggle="modal" data-bs-target="#newGoalModal">Submit</button>
+                      </div>
+                  </div>
+                  <div class="modal fade" id="newGoalModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Enrollment Confirmation</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          You have successfully submitted your New Goal!
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="confirmationClose">Close</button>
+                          
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <br>
+                  <br>
+                  <p>Already tracking goals? click below</p>
+                  <button class="btn btn-outline-secondary btn-lg" id="current-user" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSearch" aria-expanded="false" aria-controls="collapseSearch">
+                    Current User Click Here
+                  </button>
+                  <button class="btn btn-outline-secondary btn-lg" id="update-user" type="button" data-bs-toggle="collapse" data-bs-target="#collapseUpdate" aria-expanded="false" aria-controls="collapseUpdate">
+                    Update User Click Here
+                  </button>
+
+                  <div class="collapse" id="collapseSearch">
+                    <div class="card card-body w-100">
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                      </div>
+                      A search function to find yourself.
+                      <div class="input mb-3">
+                        <form id="person-search">
+                        <input type="text" name="search" id="name-entered" class="form-control" placeholder="Enter your Name" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="submit" id="person-bttn">Search</button>
+                        <button class="btn btn-outline-secondary" type="reset" value="reset" id="clear-bttn">Clear</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="collapse" id="collapseUpdate">
+                    <div class="card card-body w-100">
+                      <div class="btn-group" role="group" aria-label="Basic example">
+                      </div>
+                      A spot to update your User information
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="update-first">Update First Name</button>
+                        <input type="text" class="form-control" placeholder="First Name" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="update-last">Update Last Name</button>
+                        <input type="text" class="form-control" placeholder="Last Name" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="update-age">Update Age</button>
+                        <input type="text" class="form-control" placeholder="Age" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="update-phone">Update Last Name</button>
+                        <input type="text" class="form-control" placeholder="Phone Number" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                      <div class="input-group mb-3">
+                        <button class="btn btn-outline-secondary" type="button" id="update-email">Update Email</button>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                      </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+          
+              <div class="row align-items-md-stretch">
+                <div class="col-md-6">
+                  <div class="h-100 p-5 text-bg-dark rounded-3">
+                    <h2>Current Goals</h2>
+                    <button class="btn btn-outline-light" id="current-goals" type="button" data-bs-toggle="collapse" data-bs-target="#incompletegoals" aria-expanded="false" aria-controls="incompletegoals">
+                        See Current
+                      </button>
+                      <button class="btn btn-outline-light" id="update-goals" type="button" data-bs-toggle="collapse" data-bs-target="#updategoals" aria-expanded="false" aria-controls="updategoals">
+                        Update Goals
+                      </button>
+                    <p>Below are your current goals:</p>
+                      <div class="collapse" id="incompletegoals">
+                        <div class="card card-body text-bg-light" >
+                          <div class="incomplete-goals">
+                            <u><strong>Current Incomplete Goals!</strong> </u>
+                            <br>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="collapse" id="updategoals">
+                        <div class="card card-body text-bg-light" >
+                          <div class="update-goals">
+                            <u><strong>Update Goals!</strong> </u>
+                            <br>
+                            <div class="input-group input-group-sm mb-3 w-25">
+                              <span class="input-group-text" id="inputGroup-sizing-sm">Goal #</span>
+                              <input type="text" class="form-control" placeholder="1, 2, 3  etc" aria-label="goalNumber" aria-describedby="inputGroup-sizing-sm">
+                            </div>
+                            <div class="input-group mb-3">
+                              <button class="btn btn-outline-secondary" type="button" id="update-goals-complete">Update</button>
+                              <input type="text" class="form-control" placeholder="Goal Complete yes or no?" aria-label="Example text with button addon" aria-describedby="button-addon1">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2>Completed Goals</h2>
+                    <button class="btn btn-outline-secondary" id="completed-goals" type="button" data-bs-toggle="collapse" data-bs-target="#completeGoalsdiv" aria-expanded="false" aria-controls="collapseExample">
+                        See Completed
+                      </button>
+                    <p>Below are the goals you have compeleted for the day:</p>
+                      <div class="collapse" id="completeGoalsdiv">
+                        <div class="card card-body">
+                          <div class="complete-goals">
+                            <u><strong>Complete goals populate here!</strong> </u>
+                            <br>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+          
+              <footer class="pt-3 mt-4 text-muted-white border-top">
+                &copy; Brought to you by: Edward
+              </footer>
+            </div>
+          </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
